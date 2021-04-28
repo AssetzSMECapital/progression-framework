@@ -20,6 +20,8 @@ topics:
             - "SELECT SUM(...) FROM ..."
             - "SELECT COUNT(*) FROM ..."
     - level: 2
+      criteria:
+        - "Utilises database transactions to atomically execute multiple statements"
       exampleCriteria:
         - criteria: "Implements Common Table Expressions to break-down complex queries"
           examples:
@@ -33,21 +35,46 @@ topics:
         - "Utilises indexes to increase the performance of a query"
         - "Interprets the output from EXPLAIN ANALYSE to make actionable gains"
         - "Understands how SECURITY DEFINER promotes additional privileges where appropriate"
+        - "A good boy-scout and optimises slow queries"
+    - level: 4
+      criteria:
+        - "TODO: Feels like something should go here?"
 - name: "Designing data models"
   title: "🗂️ Designing data models"
   content:
     - level: 1
       criteria:
         - "Can create a simple, standalone database table"
+        - "Ensures any database fields containing personal information are registered with the InfoSec team"
+        - "Usage of enum types where value can only be of limited choices"
+      exampleCriteria:
+        - criteria: "Follows Assetz conventions and best practices"
+          examples:
+          - "Timestamp columns are suffixed with `_at` and contain timezone"
+          - "Boolean columns are prefixed with `is_`"
+          - "Table names are non-plural"
+        - criteria: "Understands and uses the correct data types"
+          examples:
+          - "numeric(38,20) for monetary amounts"
+          - "text for all string types"
+          - "bigint primary keys for large volumes of data"
     - level: 2
       criteria:
         - "Creates tables containing multiple relationships"
-        - "Applies unique constraints where appropriate"
+        - "Applies unique constraints where necessary"
+      exampleCriteria:
+        - criteria: "Implements constraints to ensure data integrity"
+          examples:
+            - "`CONSTRAINT prevent_negative CHECK (amount >= 0)`"
     - level: 3
       exampleCriteria:
         - criteria: "Usage of table triggers where appropriate"
           examples:
-            - "BEFORE DELETE ON ... EXECUTE"
+            - "BEFORE DELETE ON ... EXECUTE ..."
+    - level: 4
+      criteria:
+        - "Can implement data partitioning to increase efficiency"
+        - "Applies strategic thinking for designing tables to handle big data"
 - name: "mastery"
   title: "🛠️ Mastery"
   content:
@@ -57,10 +84,21 @@ topics:
         examples:
           - "GRANT SELECT, UPDATE ON ..."
           - "REVOKE DELETE ON ..."
+  - level: 2
+    criteria:
+      - "A good boy-scout and safely removes un-used database fields without a negative impact"
   - level: 3
     criteria:
       - "Safely applies usage of advisory locks"
-      - "Identifies running queries that are causing a negative impact"
+    exampleCriteria:
+      - criteria: "Identifies running queries that are causing a negative impact"
+        examples:
+          - "Are queries waiting for a lock to be released?"
+          - "Is the query paging to disc and causing high I/O usage?"
+      - criteria: "Uses appropriate database connection management"
+        examples:
+          - "Connection pooling for APIs"
+          - "Minimum required connections for a service or application"
   - level: 4
     criteria:
       - "Safely applies table and row level locks"
@@ -69,8 +107,10 @@ topics:
   content:
   - level: 1
     criteria:
-    - "Aimed at using databases, not administrating databases. Is this the right approach?"
+    - "Aimed at using databases, not administrating databases. Is this the right approach? Or could lvl 4 be for more admin'y things engineers still need to consider like table bloat"
     - "Database functions? Want to discourage - but occasionally they are acceptable?"
+    - "What about views, and materialized views?"
+    - "Connection management"
 ---
 
 Become a master of the database!
