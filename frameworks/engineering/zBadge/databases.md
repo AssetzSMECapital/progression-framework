@@ -29,7 +29,7 @@ topics:
         - criteria: "Implements Common Table Expressions or temporary tables to break-down complex queries"
           examples:
             - "WITH something AS (...) SELECT * FROM something;"
-        - criteria: "Writes queries containing complex aggregate functions"
+        - criteria: "Writes queries containing advanced aggregate functions"
           examples:
           - "SELECT SUM(...) FILTER (WHERE ...) FROM ..."
           - "SELECT COUNT(*) FILTER (WHERE ...) FROM ..."
@@ -54,8 +54,8 @@ topics:
           examples:
             - "Cursors"
             - "Clustered TID scan"
-- name: "Designing data models"
-  title: "🗂️ Designing data models"
+- name: "Data models"
+  title: "🗂️ Data models"
   content:
     - level: 1
       criteria:
@@ -75,11 +75,15 @@ topics:
           - "bigint primary keys for large volumes of data"
     - level: 2
       criteria:
-        - "Creates tables containing multiple relationships"
-        - "Applies unique constraints where necessary - INDEXES?"
+        - "Creates tables containing multiple relationships using foreign keys with appropriate cascades"
+        - "Applies unique indexes and constraints where necessary"
         - "Utilises simple indexes to optimise data access"
         - "Create a database view in appropriate circumstances"
       exampleCriteria:
+        - criteria: "Know the data structure held within your team's domains"
+          examples:
+            - "Where to find the data"
+            - "Alter appropriate existing tables"
         - criteria: "Understands and uses advanced data types"
           examples:
             - "`JSONB`"
@@ -91,6 +95,8 @@ topics:
             - "`CONSTRAINT prevent_negative CHECK (amount >= 0)`"
     - level: 3
       criteria:
+        - "Aware of the overall data structure of all our domains at a high level"
+        - "Understand how usage of foreign keys can affect locking"
         - "Create a materialized view in appropriate circumstances and understands the drawbacks of refreshing an entire dataset"
       exampleCriteria:
         - criteria: "Usage of table triggers where appropriate"
@@ -103,8 +109,8 @@ topics:
         - "Can implement data partitioning to increase efficiency"
         - "Applies strategic thinking for designing tables to handle big data"
         - "Reduce data duplication by taking advantage of table inheritance"
-- name: "mastery"
-  title: "🛠️ Mastery"
+- name: "Expertise"
+  title: "🛠️ Expertise"
   content:
   - level: 1
     exampleCriteria:
@@ -162,6 +168,8 @@ topics:
     - "Aimed at using databases, not administrating databases. Level 4 includes some more admin'y things engineers still need to consider like table bloat"
     - "Leaving out foreign data wrappers - doesn't feel aligned with separation of concerns?"
     - "Tried to align with our architecture principles - avoid logic in database etc"
+    - "CHRIS feedback - how an index can improve performance of write operations?"
+    - "Redis lvl 1 and 3"
 ---
 
 Become a master of databases!
