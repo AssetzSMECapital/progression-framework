@@ -70,7 +70,7 @@ topics:
           - "Table names are non-plural"
         - criteria: "Understands and uses basic data types"
           examples:
-          - "numeric(38,20) for monetary amounts"
+          - "numeric(40,20) for monetary amounts"
           - "text for all string types"
           - "bigint primary keys for large volumes of data"
     - level: 2
@@ -79,6 +79,8 @@ topics:
         - "Applies unique indexes and constraints where necessary"
         - "Utilises simple indexes to optimise data access"
         - "Create a database view in appropriate circumstances"
+        - "AWARENESS OF TRIGGERS"
+        - "AWARENESS OF LOCKING"
       exampleCriteria:
         - criteria: "Know the data structure held within your team's domains"
           examples:
@@ -120,10 +122,10 @@ topics:
           - "REVOKE DELETE ON ..."
   - level: 2
     criteria:
-      - "A good boy-scout and safely removes un-used database fields without a negative impact"
       - "Utilises cascading role permissions"
   - level: 3
     criteria:
+      - "A good boy-scout and safely removes un-used database fields without a negative impact"
       - "Safely applies table and row level locks and understands impact"
     exampleCriteria:
       - criteria: "Identifies running queries that are causing a negative impact"
@@ -170,6 +172,10 @@ topics:
     - "Tried to align with our architecture principles - avoid logic in database etc"
     - "CHRIS feedback - how an index can improve performance of write operations?"
     - "Redis lvl 1 and 3"
+    - "Advisory lock awareness lower level (difference between session)"
+    - "When is it appropriate to use the database??"
+    - "Releasing SQL migrations"
+    - "Governance / differences over non-structured data (json columns)"
 ---
 
 Become a master of databases!
